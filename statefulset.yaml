@@ -58,7 +58,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
+      - name: onyiokoligwe/project:latest
         image: nginx
         ports:
         - containerPort: 80
