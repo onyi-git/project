@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "onyi-git/project"
+    dockerimagename = "onyiokoligwe/project"
     dockerImage = ""
   }
 
@@ -36,14 +36,29 @@ pipeline {
       }
     }
 
-    stage('Deploying App to Kubernetes') {
-      steps {
-        script {
-          kubernetesDeploy(configs: "statefulset.yaml", kubeconfigId: "kubernetes")
-        }
-      }
-    }
+    stage('Deploy to K8s')
+		{
+			steps{
+				
+					
+				script{
+					try{
+						sh 'ssh ubuntu@ip-10-0-7-73 kubectl apply -f statefulset.yaml --kubeconfig=/home/ubuntu/.kube/config'
 
-  }
+						}catch(error)
+						{
+
+						}
+				}
+				
+			}
+		}
+	}
+
+	post {
+		always {
+			sh 'docker logout'
+		}
+	}
 
 }
