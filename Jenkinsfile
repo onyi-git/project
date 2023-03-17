@@ -37,23 +37,15 @@ pipeline {
     }
 
     stage('Deploy to K8s')
-		{
-			steps{
-				
-					
-				script{
-					try{
-						sh 'ssh ubuntu@ip-10-0-7-73 kubectl apply -f statefulset.yaml --kubeconfig=/home/ubuntu/.kube/config'
-
-						}catch(error)
-						{
-
-						}
-				}
-				
-			}
+        {
+        steps{ 
+			withKubeConfig([credentialsId: 'K8s-username', serverUrl: 'http://3.10.199.130:8080']) {
+                sh 'kubectl apply -f statefulset.yaml'
+            }
 		}
-	}
+    }
+      
+ }
 
 	post {
 		always {
