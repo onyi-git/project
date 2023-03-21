@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: onyiokoligwe/project:latest
+        image: httpd
         ports:
         - containerPort: 80
           name: web
