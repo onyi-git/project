@@ -3,6 +3,24 @@
   - name: Deploy the server
     k8s:
       state: present
+      definition: "{{ lookup('template', 'pv.yaml') | from_yaml }}"
+      validate_certs: no
+      namespace: default
+  - name: Deploy the server1
+    k8s:
+      state: present
+      definition: "{{ lookup('template', 'pvc.yaml') | from_yaml }}"
+      validate_certs: no
+      namespace: default
+  - name: Deploy the server2
+    k8s:
+      state: present
+      definition: "{{ lookup('template', 'svc.yaml') | from_yaml }}"
+      validate_certs: no
+      namespace: default
+  - name: Deploy the server3
+    k8s:
+      state: present
       definition: "{{ lookup('template', 'statefulset.yaml') | from_yaml }}"
       validate_certs: no
       namespace: default
