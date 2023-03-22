@@ -1,4 +1,4 @@
-FROM nginx:alpine-slim
+FROM httpd
  
 RUN apt-get update && apt-get upgrade -y
  
