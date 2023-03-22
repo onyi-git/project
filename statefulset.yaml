@@ -11,7 +11,7 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/data/app"
----
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -27,7 +27,7 @@ spec:
   selector:
     matchLabels:
       vol: nginx
----
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -41,7 +41,7 @@ spec:
   clusterIP: None
   selector:
     app: nginx
----
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
