@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: httpd
+        image: onyiokoligwe/project:latest
         ports:
         - containerPort: 80
           name: web
