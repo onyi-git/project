@@ -40,7 +40,7 @@ pipeline {
         {
         steps{ 
 
-                sh 'kubectl apply -f statefulset.yaml'
+                sh 'kubectl apply -f statefulset-all.yaml'
             }
 		}
     }
