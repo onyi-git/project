@@ -1,4 +1,4 @@
-- hosts: 35.176.191.160
+- hosts: all
   tasks:
   - name: Deploy the server
     k8s:
