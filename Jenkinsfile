@@ -39,8 +39,11 @@ pipeline {
     stage('Deploy to K8s')
         {
         steps{ 
-		withKubeConfig([credentialsId: 'K8s-username', serverUrl: 'https://192.168.49.2:8443']) {
-                sh 'kubectl apply -f statefulset-all.yaml'
+		withKubeConfig([credentialsId: 'minikube_config', serverUrl: 'https://192.168.49.2:8443']) {
+                sh 'kubectl apply -f pv.yaml'
+                sh 'kubectl apply -f pvc.yaml'
+                sh 'kubectl apply -f svc.yaml'
+                sh 'kubectl apply -f statefulset.yaml'
             }
 		}
     }
