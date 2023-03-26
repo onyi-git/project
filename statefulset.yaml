@@ -21,7 +21,7 @@ spec:
           name: web
         volumeMounts:
         - name: nginx-vol
-          mountPath: "/usr/share/nginx/html"
+          mountPath: "/var/run/docker.sock"
       volumes:
       - name: nginx-vol
         persistentVolumeClaim:
