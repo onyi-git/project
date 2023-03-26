@@ -6,7 +6,7 @@ metadata:
     vol: nginx
 spec:
   capacity:
-    storage: 1Gi
+    storage: 2Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
