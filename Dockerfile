@@ -4,6 +4,6 @@ RUN apt-get update && apt-get upgrade -y
  
 COPY index.html /usr/share/nginx/html
  
-EXPOSE 8080
+EXPOSE 9900
  
 CMD ["nginx", "-g", "daemon off;"]
