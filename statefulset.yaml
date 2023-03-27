@@ -13,6 +13,7 @@ spec:
       labels:
         app: nginx
     spec:
+      terminationGracePeriodSeconds: 30
       containers:
       - name: nginx
         image: onyiokoligwe/project:latest
