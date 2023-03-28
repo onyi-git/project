@@ -27,3 +27,5 @@ spec:
       - name: nginx-vol
         persistentVolumeClaim:
           claimName: group-pvc
+      securityContext:
+        fsGroup: 101
