@@ -20,9 +20,9 @@ spec:
         ports:
         - containerPort: 80
           name: web
-        volumeMounts:
-        - name: nginx-vol
-          mountPath: /usr/share/nginx/html
+#         volumeMounts:
+#         - name: nginx-vol
+#           mountPath: /usr/share/nginx/html
       volumes:
       - name: nginx-vol
         persistentVolumeClaim:
